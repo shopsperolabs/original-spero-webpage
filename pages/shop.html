@@ -1,0 +1,52 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {
+  display:none;
+  padding:0px;
+ margin-bottom: -6px;
+}
+#image_container img {
+  height:300px;
+  display:inline-block;
+  float: left;
+  padding: 4px;
+}
+ul.hat_images {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+ul.hat_images li {
+  display: inline-block;
+  margin: 0px 3px 6px 3px;
+  position: relative;
+}
+ul.hat_images li img {
+  height:300px;
+}
+body {
+  background-color:white;
+}
+.what {
+  display: none;
+}
+</style>
+<ul class="hat_images">
+	<li> <img class="mySlides" src="http://i68.tinypic.com/1447803.jpg" style="width:1100px; height:auto;"> <img class="mySlides" src="http://i65.tinypic.com/1zqy2c8.jpg" style="width:1100px; height:auto;"> <img class="mySlides" src="http://i65.tinypic.com/99j3g4.jpg" style="width:1100px; height:auto;"> </li>
+</ul>
+<script type="text/javascript">
+var myIndex = 0;
+carousel();
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i &lt; x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex &gt; x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
