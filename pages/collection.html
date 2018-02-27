@@ -1,0 +1,269 @@
+<style type="text/css">
+
+#collection-container{
+  overflow: hidden;
+  background-color:white;
+  padding-right:6%;
+  padding-left:6%;
+}
+
+#collection-header{
+  height: 35px;
+  margin: 5px 0px 0px 0px;
+}
+
+#collection-title{
+  width: 175px;
+  height: 100%;
+  float: left;
+  margin:0px;
+}
+
+#collection-title a {
+  font-size: 50;
+  font-style: normal;
+  font-weight: 300;
+  font-family: "OstrichSansRounded", sans-serif;
+}
+
+
+#collection-menu{
+  text-align: center;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+#collection-menu li{
+  display: inline;
+  list-style-type: none;
+  font-size: 10px;
+}
+
+#collection-menu li a.item{
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  color: #222222;
+  font-weight: 200;
+  margin: 0px 6px 0px 6px;
+}
+
+#collection-menu li a:hover{
+  color: #9c9c9c;
+}
+
+#collection{
+  width: 100%;
+}
+
+.products.row{
+  width: 100%
+}
+
+.product.col3{
+  max-width: 500px;
+  max-height: 500px;
+}
+div.prod_desc{
+  display: none;
+  position: absolute;
+  width: 250;
+  height: 250;
+  text-align: center;
+}
+div.prod_photo{
+  display: block;
+}
+.product_name{
+  padding-top: 0px;
+  display: block;
+  width: 75%;
+  position: center;
+  margin: auto !important;
+  margin-top: 45% !important;
+  color: black;
+  text-decoration: none;
+  font-family: Josefin Slab;
+  font-style: normal;
+}
+.product_price{
+  display: block;
+  position: center;
+  margin: auto !important;
+  color: black;
+  text-decoration: none;
+}
+li.product .product_price {
+  opacity: 1;
+}
+
+
+.collections{
+  margin-top: 20px;
+}
+
+#shop-all{
+    font-size: 26;
+    font-style: normal;
+    font-family: 'Grand Hotel', serif;
+  }
+ul.products.row {
+  margin:0;
+}
+li.product img.product-photo {
+  width:250px;
+}
+h2#title.collection-title {
+      box-sizing: border-box;
+    text-align: center !important;
+    padding: 0px;
+    font-size: 30px !important;
+    font-weight: 100 !important;
+    text-transform: uppercase;
+  }
+  
+@media (max-device-width: 700px) {
+  .prod_photo {
+  display:none;
+  }
+  .product_photo {
+  display:none;
+  }
+  .product.col3 {
+  left-margin:7.5%;
+  min-width:75%;
+  }
+  .prod_desc{
+  width:100% !important;
+  }
+  li.product img.product-photo {
+  width:100%;
+  text-align:center;
+}
+  #footer {
+  background-color: white !important;
+  }
+  ul.products.row {
+  margin-left:20px;
+  }
+  
+}
+
+</style>
+
+<div id="collection-container">
+  <!-- <div id="collection-header">
+    <div>
+      <ul id="collection-menu">
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376662-tops">tops</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376665-bottoms">bottoms</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376692-outerwear">outerwear</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376689-dresses">dresses</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376686-shoes">shoes</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376674-accessories">accessories</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376668-artwork">artwork</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/376710-sweatshirts-cardigans">sweatshirts &#38 cardigans</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/products">see all</a>
+        </li>
+        <li>
+          <a class="item" href="http://shop-spero.com/collections/429130-sold-out">sold out</a>
+        </li>
+      </ul>
+    </div>
+</div> -->
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+<script>
+  $('document').ready(function(){
+    var prod_photos = document.getElementsByClassName("prod_photo");
+    var prod_names  = document.getElementsByClassName("product_name");
+    var prod_price  = document.getElementsByClassName("product_price");
+    for(var i = 0; i < prod_photos.length; i++) {
+      var photo = prod_photos.item(i);
+      var name = prod_names.item(i);
+      var info = prod_price.item(i);
+  
+      photo.setAttribute("id", "photo_" + i);
+      name.setAttribute("id", "name_" + i);
+      info.setAttribute("id", "info_" + i);
+    }
+    $(".prod_photo").each(function (i) {
+      $(this).hover( function() {
+        var $photo = $(this);
+        var index = $photo.attr("id").split("_")[1];
+        var $desc = $photo.parent().children(".prod_desc");
+        $desc.css("display", "block");
+        $photo.css("opacity", "0.25");
+      }.bind(this),
+      function (i) {
+        var $photo = $(this);
+        var index = $photo.attr("id").split("_")[1];
+        var $desc = $photo.parent().children(".prod_desc");
+        $desc.css("display", "none");
+        $photo.css("opacity", "1.0");
+      }.bind(this));
+    });
+  });
+  
+</script>
+<div id="collection">
+<h2 id="title" class="collection-title">
+  {% if page.name == 'All Products' %}
+    <div id="shop-all">Shop All</div>
+  {% else %}
+    —{{ page.name | strip_html }}—
+  {% endif %}
+</h2>
+{% if products.current != blank %}
+  <ul class="products row">
+    {% for product in products.current %}
+    <li class="product col3" id="products_{{product.id}}">
+      <div class="flags">
+        {% if product.on_sale %}<div class="on_sale flag status">On Sale</div>{% endif %}
+        {% if product.preorder %}<div class="preorder flag status">Preorder</div>{% endif %}
+        {% if product.coming_soon %}<div class="coming_soon flag status">Coming Soon</div>{% endif %}
+        {% if product.sold_out %}<div class="sold_out flag">Sold Out</div>{% endif %}
+      </div>
+      <a class="prod" href="{{product.url}}">
+        <div>
+        <div class = "prod_info">
+          <div class = "prod_desc">
+            <p class="product_name">
+              {{ product.name | strip_html }}
+            </p>
+            <p class="product_price">
+              {{ product.price | money_with_sign }}
+            </p>
+          </div>
+          
+          <div class="prod_photo">
+            <img src="{{ product.image.medium_url }}" alt="{{ product.name | h }}" class="product-photo" />
+          </div>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="no-products">
+    <p>Nothing here yet.</p>
+  </div>
+{% endif %}
+</div>
+</div>

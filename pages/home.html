@@ -1,0 +1,244 @@
+<style type="text/css">
+
+
+  
+#options ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  height:30px;
+}
+
+#options p:hover {
+   color:red;
+}
+
+#options ul li {
+    display: inline;
+}
+
+#options ul li a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Raleway', sans-serif;
+    font-weight:400;
+    font-size:12px;
+}
+
+#options ul:hover li a {
+  color: #353535;
+}
+
+#options ul li a:hover {
+    color: #353535;
+}
+  
+
+#header {
+  height: 100px;
+}
+
+
+#header a {
+  font-family:Josefin Slab, serif; 
+  text-align:center; 
+  font-size:55px;
+  display:block;
+  padding-top: 35px;
+  text-decoration:none;
+  color:white;
+  }
+ 
+
+ 
+
+#footer {
+  height:125px;
+}
+
+#footer-menu ul {
+  text-align:center;
+}
+
+
+#footer a {
+  font-family:'Raleway', sans-serif;
+  font-weight:100;
+  font-size:12px;
+  text-decoration:none;
+  text-align:center;
+}
+
+#main_container{
+  text-align:center;
+}
+
+#main_images {
+  height:600px;
+  margin:2.5px;
+}
+  
+body {
+  background: url('http://i67.tinypic.com/28veslg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#full_banner:hover {
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  background-color: rgba(255,255,255,1);
+  height: 130px;
+}
+
+#full_banner:hover a {
+  color: #2a2a2a;
+}
+
+#enter_shop a {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 8px 19px 8px 19px;
+  text-decoration:none;
+  position: absolute;
+  font-size:15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  top:78%;
+  margin-left:-70px;
+  }
+
+#enter_shop a:hover{
+  background-color:white;
+  color: gray;
+}
+#enter_shop {
+  text-align:center;
+}
+  #shop_vintage a {
+  display: none;
+  }
+#shop_originals a{
+  display:none;
+  }
+  @media (max-device-width: 700px) {
+  #header a {
+  display: none !important;
+  }
+  #options ul {
+  display: none;
+  }
+  #options ul li {
+  display: none;
+  }
+  #enter_shop a {
+  display: none;
+  }
+  body {
+  background: url("http://i63.tinypic.com/f1w2t3.jpg");
+  bacckground-size: auto 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  #shop_vintage a {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 8px 19px 8px 19px;
+  text-decoration:none;
+  position: absolute;
+  font-size:50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  top:20%;
+  left: 29%;
+    display: block;
+  }
+  #shop_vintage {
+  text-align: center;
+  }
+  #shop_originals a {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 8px 19px 8px 19px;
+  text-decoration:none;
+  position: absolute;
+  font-size:50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  top:70%;
+  left: 29%;
+    display: block;
+  }
+  #shop_originals {
+  text-align: center;
+  }
+  }
+
+</style>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="http://dzasv7x7a867v.cloudfront.net/stores/avatars/124381/medium/Sperologo1_(1).jpg?1380748495" />
+    <link href="{{ theme | theme_css_url }}" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab|Lato:400,100,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+ 
+  {{head_content}}</head>
+<body>
+  
+<!--
+  
+<div id='main_container'>
+  <a href="http://shop-spero.com/products" class="first_image"><img id="main_images" src="http://i63.tinypic.com/o7r9j7.jpg"></a>
+  <img id="main_images" src="http://i63.tinypic.com/2qkukpx.jpg">
+  <img id="main_images" src="http://i63.tinypic.com/35jf0hf.jpg">
+  <img id="main_images" src="http://i63.tinypic.com/6f331w.jpg">
+
+</div> <!--end #main_container-->
+
+  
+  <div id="mobile-header">
+        <a id="drawer_button" href="javascript:;">Open Nav</a>
+        Hello!
+      </div> <!-- end #mobile-header -->
+<div id="full_banner">
+  <div id="header"><a href="http://shop-spero.com/shop">SHOP SPERO</a></div>
+  <div id="options">
+        <ul id="header-options">
+          <li><a href="http://shop-spero.com/collections/1440745-new-arrivals">NEW ARRIVALS</a></li>
+          <li><a href="http://shop-spero.com/collections/1396682-originals">ORIGINALS</a></li>
+          <li><a href="https://spero.storenvy.com/collections/1440742-vintage">VINTAGE</a></li>
+          <li><a href="http://shop-spero.com/about">ABOUT</a></li>
+          <li><a href="http://shop-spero.com/contact">CONTACT US</a></li>
+        </ul>
+  </div><!-- end options--> 
+</div>
+  
+  
+<div id="enter_shop">
+  <a href="http://shop-spero.com/shop">ENTER SHOP</a>
+</div>
+  <div id="shop_vintage">
+  <a href="https://spero.storenvy.com/collections/1440742-vintage">SHOP VINTAGE</a>
+</div>
+<div id="shop_originals">
+  <a href="http://shop-spero.com/collections/1396682-originals">SHOP ORIGINALS</a>
+</div>
+</body>
+</html>​

@@ -1,0 +1,236 @@
+<style type="text/css">
+
+/* Product */
+#offset {
+height:20px;
+background-color:white;
+}
+#product {
+background-color:white;
+overflow-x:hidden;
+}
+#product_info {
+  width:300px;
+  overflow-x:hidden;
+  padding-left: 20px;
+  margin:0;
+}
+#product_info #product_name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-top:30%;
+
+}
+
+#product_info #product_description {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#product_info #description_label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+#product_info #price {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+input#add_to_cart_button.button.add_to_cart_button {
+  font-family: 'Raleway', sans-serif;
+  font-size:10px;
+  font-weight:400;
+  background-color:#575757;
+}
+input#add_to_cart_button.button.add_to_cart_button:hover {
+  background-color:#404040;
+}
+#main_photo {
+  margin-left:20%;
+}
+#main_photo img {
+  display: block;
+  width:800px;
+}
+#thumbs img {
+  width:50px;
+  margin:0px;
+  }
+#variant_id_chzn .chzn-single {
+  font-size:8px;
+  padding: 2px 15px 2px 15px;
+  height:30px;
+}
+#variant_id_chzn a span {
+  font-size: 10px;
+}
+li#variant_id_chzn_o_1.active_result {
+font-size:8px;
+}
+
+@media (max-device-width: 700px) {
+  #product-photo{
+    width: 100%;
+    margin-left:-5%;
+  }
+  ul#thumbs{
+  margin:0;
+
+  }
+  #thumbs {
+  padding-left:21%;
+  }
+  #product-navigation {
+  display:none;
+  }
+  #product_info p{
+  margin-top:0px !important;
+  text-align:center;
+  }
+  #product_info {
+  width:100%;
+  padding-left:0px;
+  }
+  #footer {
+  background-color:white !important;
+  }
+  #share_product {
+  text-align:center;
+  }
+}
+  
+
+</style>
+<div id="offset">
+</div>
+<div id="product">
+  {% if collection != blank %}
+    <div id="product-navigation">
+      <ul>
+        {% if product.prev %}
+          <li><a href="{{ product.prev.url }}">Previous</a></li>
+        {% endif %}
+
+        {% if product.next %}
+          <li><a href="{{ product.next.url }}">Next</a></li>
+        {% endif %}
+      </ul>
+
+      <div class="breadcrumb">
+        <a href="{{store.url}}">{{ store.name }}</a>
+        &gt;
+        <a href="{{collection.url}}">{{ collection.name }}</a>
+        &gt;
+        {{ product.name }}
+      </div>
+
+      <hr />
+    </div>
+  {% endif %}
+
+  <div id="product-photo">
+    <div id="main_photo">
+      <a href="{{ product.photo.url }}" rel="product_photos"><img src="{{ product.photo.url_400 }}" alt="{{ product.name | escape }}" /></a>
+
+      <ul id="thumbs">
+        {% for photo in product.photos offset:1 %}
+        <li>
+          <a href="{{ photo.url }}" class="product_thumb" {% if forloop.first %}id="first_thumb" {% endif %} rel="product_photos">
+            <img src="{{ photo.url_200sq }}" alt="{{ product.name | escape }} - Thumbnail {{forloop.index}}"/>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div id="product_info">
+    <p id="product_name">{{ product.name }}</p>
+    <p id="price">{{ product.price | money_with_sign }}</p>
+    {% if product.on_sale %}<div class="sale status">On Sale</div>{% endif %}
+    {% if product.preorder %}<div class="preorder status">Pre-Order</div>{% endif %}
+    {% if product.coming_soon %}<div class="soon status">Coming Soon</div>{% endif %}
+    {% if product.sold_out %}<div class="soldout">Sold Out</div>{% endif %}
+    {% if product.coming_soon %}
+
+    {% else %}
+
+      {% if product.sold_out %}
+
+      {% else %}
+        <form method="post" id="cart_add_form" action="/cart">
+          {% if product.variants.size > 1 %}
+            <select id="variant_id">
+              {% for variant in product.variants %}
+                {% if variant.quantity > 0 %}
+                  <option value="{{ variant.id }}">{{ variant.name }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          {% else %}
+            <div class="{% if product.variants.first.name != 'Default' %}single-variant{% endif %}">
+              <input type="hidden" id="variant_id" value="{{ product.variants.first.id }}" />
+              {% if product.variants.first.name != 'Default' %}
+                <span>{{ product.variants.first.name }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+          <input type="button" id="add_to_cart_button" class="button add_to_cart_button" value="ADD TO CART"/>
+          <div class="clearfix"></div>
+        </form>
+
+      {% endif %}
+      <div id="add_notice" style="display:none;">
+        <div id="add_error" style="display:none;"></div>
+        <div id="add_success" style="display:none;">
+          <p id="item_added"><span id="added_to_cart_label">Added to cart.</span></p>
+          <a href="" class="button" id="add_notice_checkout">CHECKOUT</a>
+          <p id="items_in_cart">
+            <a href="" id="add_notice_checkout_cart">
+              <span id="add_notice_cart_count"></span>
+            </a>
+          </p>
+        </div>
+      </div>
+    {% endif %}
+    <hr/>
+    {% if product.description != blank %}
+      <p id="description_label">Description</p>
+      <div id="product_description">{{ product.description | auto_link | paragraphs }}</div>
+      <hr />
+    {% endif %}
+
+    <p style="font-size:10px">SHARE THIS</p>
+    <div id="share_product">
+      {{ product | facebook_like_button: 'button_count' }} <!-- Facebook Like Button -->
+      {{ product | pinterest_button }} <!-- Pinterest Pin-it Button -->
+      {{ product | tumblr_button }} <!-- Tumblr Share Button -->
+      {{ product | tweet_button }} <!-- Twitter Share Button -->
+    </div>
+
+    {% if theme.show_stock_bars %}
+    <p>STOCK LEVELS</p>
+    <ul id="stock">
+      {% for variant in product.variants %}
+        <li>
+          <p>
+            {% if variant.name != 'Default' %}
+            {{ variant.name }}
+            {% else %}
+            Availability
+            {% endif %}
+            <span class="stock-sold-out">{% if variant.quantity < 1 %} (sold out){% endif %}</span>
+          </p>
+          <div class="stock-remaining" style="width:{{variant.percent_available}}%;"></div>
+          <div class="stock-sold"></div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div><!-- end #product_info -->
+</div><!-- end #product -->
