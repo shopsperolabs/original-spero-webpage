@@ -1,290 +1,291 @@
 <style type="text/css">
 #options {
-background-color:white;
-padding-bottom:12px
-}
-
+  background-color:white;
+  padding-bottom:12px
+  }
+  
 #options ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
 }
 
 #options ul li {
-  display: inline;
+    display: inline;
 }
 
 #options ul li a {
-  color: black;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family:'Raleway', sans-serif;
-  font-weight:400;
-  font-size:12px;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Raleway', sans-serif;
+    font-weight:400;
+    font-size:12px;
 }
 
 #options ul li a:hover {
-  color: gray;
+    color: gray;
 }
 
 #header {
-height: 100px;
-width: 100%;
-background-color:white;
+  height: 100px;
+  width: 100%;
+  background-color:white;
 }
 
 #header a {
-font-family:Josefin Slab, serif; 
-text-align:center; 
-font-size:55px;
-display:block;
-padding-top: 35px;
-text-decoration:none;
-}
-
+  font-family:Josefin Slab, serif; 
+  text-align:center; 
+  font-size:55px;
+  display:block;
+  padding-top: 35px;
+  text-decoration:none;
+  }
+ 
 #header a:hover {
-color:black;
+  color:black;
 }
 
 #footer {
-height:155px;
-background-color:white;
-margin:0px;
+  height:155px;
+  background-color:white;
+  margin:0px;
 }
 
 #footer-menu ul {
-text-align:center;
+  text-align:center;
 }
 
 
 #footer a {
-font-family:'Raleway', sans-serif;
-font-weight:100;
-font-size:12px;
-text-decoration:none;
-text-align:center;
+  font-family:'Raleway', sans-serif;
+  font-weight:100;
+  font-size:12px;
+  text-decoration:none;
+  text-align:center;
 }
 
 a#powered_by_storenvy.storenvy_powered {
-height:60px;
+  height:60px;
 }
 
 
 #mobile-header {
-background-color:white !important;
-padding-bottom:12px
+  background-color:white !important;
+  padding-bottom:12px
 
-}
+  }
 #mobile-header-options {
-background-color:white;
-height:40px;
-}
-
+  background-color:white;
+  height:40px;
+  }
+  
 #mobile-header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
 }
 
 #mobile-header ul li {
-  display: inline !important;
+    display: inline !important;
 }
 
 #mobile-header ul li a {
-  color: black;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family:'Raleway', sans-serif;
-  font-weight:400;
-  font-size:12px !important;
-display: inline-block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Raleway', sans-serif;
+    font-weight:400;
+    font-size:12px !important;
+  display: inline-block;
 }
 @media (max-device-width: 700px) {
-#storenvy_controls{
-display:none !important;
-}
-#options {
-display:none;
-}
-#header a {
-display:none;
-}
-#header {
-height:40px;
-}
+  #storenvy_controls{
+  display:none !important;
+  }
+  #options {
+  display:none;
+  }
+  #header a {
+  display:none;
+  }
+  #header {
+  height:40px;
+  }
 }
 </style>
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
-<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Shop {{ store.name }}</title>
+  <!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+  <!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
+  <!--[if gt IE 9]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shop {{ store.name }}</title>
 
-  <meta name="description" content="{{ page.description }} A collection of vintage and thrifted clothing and original artwork partnering with Build Hope International with 20% of proceeds funding an orphanage in Cambodia"/>
-  <meta name="keywords" content="{{ page.keywords }}" />
+    <meta name="description" content="{{ page.description }} A collection of vintage and thrifted clothing and original artwork partnering with Build Hope International with 20% of proceeds funding an orphanage in Cambodia"/>
+    <meta name="keywords" content="{{ page.keywords }}" />
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
-  <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <meta http-equiv="cleartype" content="on">
 
-  <link rel="http://dzasv7x7a867v.cloudfront.net/stores/avatars/124381/medium/Sperologo1_(1).jpg?1380748495" />
-  <link href="{{ theme | theme_css_url }}" rel="stylesheet" />
-  <link href='https://fonts.googleapis.com/css?family=Josefin+Slab|Lato:400,100,300' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Raleway:800, 400,100,200' rel='stylesheet' type='text/css'>
-<style type="text/css" media="screen">
-    body {
-      {% if theme.use_theme_background %}
+    <link rel="http://dzasv7x7a867v.cloudfront.net/stores/avatars/124381/medium/Sperologo1_(1).jpg?1380748495" />
+    <link href="{{ theme | theme_css_url }}" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab|Lato:400,100,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:800, 400,100,200' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" sizes="16x16" href="http://oi66.tinypic.com/10p7ghw.jpg">
+  <style type="text/css" media="screen">
+      body {
+        {% if theme.use_theme_background %}
 background: #FFFFFF;
-      background-image:url(/assets/themes/cooper/bg_cooper.png);
-      {% elsif store.background_image != blank %}
-      background-image:url({{ theme.background.url }});
-      {% endif %}
-    }
-    #dolla{
-  font-size: 12;
-  font-style: normal;
-  font-family: 'Grand Hotel', serif;
-}
-  </style>
+        background-image:url(/assets/themes/cooper/bg_cooper.png);
+        {% elsif store.background_image != blank %}
+        background-image:url({{ theme.background.url }});
+        {% endif %}
+      }
+      #dolla{
+    font-size: 12;
+    font-style: normal;
+    font-family: 'Grand Hotel', serif;
+  }
+    </style>
 
-  {{ page | open_graph_tags }}
-  {{ head_content }}
+    {{ page | open_graph_tags }}
+    {{ head_content }}
 
-  <script src="/assets/theme_cooper.js"></script>
+    <script src="/assets/theme_cooper.js"></script>
 
-  <script>
-    function getTopPos(el) {
-      for (var topPos = 0;
-        el != null;
-        topPos = el.offsetTop , el = el.offsetParent);
-        return topPos-$("#bubble").height()-20;
-    }
+    <script>
+      function getTopPos(el) {
+        for (var topPos = 0;
+          el != null;
+          topPos = el.offsetTop , el = el.offsetParent);
+          return topPos-$("#bubble").height()-20;
+      }
 
-    function getLeftPos(el) {
-      for (var leftPos = 0;
-        el != null;
-        leftPos += el.width() , el = el.offsetParent);
-        return leftPos;
-    }
+      function getLeftPos(el) {
+        for (var leftPos = 0;
+          el != null;
+          leftPos += el.width() , el = el.offsetParent);
+          return leftPos;
+      }
 
-    function showSubMenu1(el){
-      document.getElementById("sub1").style.display = "block";
-      // $("#sub1").show();
-      // $('#sub1').css({ top: getTopPos(this), left: getLeftPos(this)});
-    }
+      function showSubMenu1(el){
+        document.getElementById("sub1").style.display = "block";
+        // $("#sub1").show();
+        // $('#sub1').css({ top: getTopPos(this), left: getLeftPos(this)});
+      }
 
-    function showSubMenu2(){
-      document.getElementById("sub2").style.display = "block";
-    }
+      function showSubMenu2(){
+        document.getElementById("sub2").style.display = "block";
+      }
 
-    function hideSubMenu1(){
-      document.getElementById("sub1").style.display = "none";
-      // $("#sub1").hide();
-    }
+      function hideSubMenu1(){
+        document.getElementById("sub1").style.display = "none";
+        // $("#sub1").hide();
+      }
 
-    function hideSubMenu2(){
-      document.getElementById("sub2").style.display = "none";
-    }
-  </script>
-  <script type="text/javascript" src="//use.typekit.net/inw1hzk.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  
-  <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      function hideSubMenu2(){
+        document.getElementById("sub2").style.display = "none";
+      }
+    </script>
+    <script type="text/javascript" src="//use.typekit.net/inw1hzk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-45057625-1', 'shop-spero.com');
-    ga('send', 'pageview');
+      ga('create', 'UA-45057625-1', 'shop-spero.com');
+      ga('send', 'pageview');
 
-  </script>
-</head>
+    </script>
+  </head>
 
-<body id="{{ page.permalink }}-page" class="{{ page.permalink }} {{ page.category }}" onload="showPageByURL()">
-  {% if store.featured_promotion_text != blank %}
-  <div id="promotion">
-    <strong>{{ store.featured_promotion_text }}</strong>
-  </div>
-  {% endif %}
+  <body id="{{ page.permalink }}-page" class="{{ page.permalink }} {{ page.category }}" onload="showPageByURL()">
+    {% if store.featured_promotion_text != blank %}
+    <div id="promotion">
+      <strong>{{ store.featured_promotion_text }}</strong>
+    </div>
+    {% endif %}
 
 <!-- start of Susie's code-->
-  <div id="header">
-    <div id="mobile-header">
-      <ul id ="mobile-header-options">
-        <li><a href ="http://shop-spero.com/collections/1396682-originals">ORIGINALS</a></li>
-        <li><a href="https://spero.storenvy.com/collections/1440742-vintage">VINTAGE</a></li>
-        <li><a href="http://shop-spero.com/about">ABOUT</a></li>
-        <li><a href="https://www.storenvy.com/checkout/spero/cart"><img border="0" src="http://imageog.flaticon.com/icons/png/512/2/2772.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" height="15"></a></li>
-      </ul>
-    </div> <!-- end #mobile-header -->
-    <a id ="title" href="http://shop-spero.com/shop">SHOP SPERO</a>
-  </div><!-- end #header -->
-  <div id="options">
-      <ul id="header-options">
-        <li><a href="http://shop-spero.com/collections/1440745-new-arrivals">NEW ARRIVALS</a></li>
-        <li><a href="http://shop-spero.com/collections/1396682-originals">ORIGINALS</a></li>
-        <li><a href="https://spero.storenvy.com/collections/1440742-vintage">VINTAGE</a></li>
-        <li><a href="http://shop-spero.com/about">ABOUT</a></li>
-        <li><a href="http://shop-spero.com/contact">CONTACT US</a></li>
-      </ul>
-  </div><!-- end options-->
-     
- 
+    <div id="header">
+      <div id="mobile-header">
+        <ul id ="mobile-header-options">
+          <li><a href ="http://shop-spero.com/collections/1396682-originals">ORIGINALS</a></li>
+          <li><a href="https://spero.storenvy.com/collections/1440742-vintage">VINTAGE</a></li>
+          <li><a href="http://shop-spero.com/about">ABOUT</a></li>
+          <li><a href="https://www.storenvy.com/checkout/spero/cart"><img border="0" src="http://imageog.flaticon.com/icons/png/512/2/2772.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" height="15"></a></li>
+        </ul>
+      </div> <!-- end #mobile-header -->
+      <a id ="title" href="http://shop-spero.com/shop">SHOP SPERO</a>
+    </div><!-- end #header -->
+    <div id="options">
+        <ul id="header-options">
+          <li><a href="http://shop-spero.com/collections/1440745-new-arrivals">NEW ARRIVALS</a></li>
+          <li><a href="http://shop-spero.com/collections/1396682-originals">ORIGINALS</a></li>
+          <li><a href="https://spero.storenvy.com/collections/1440742-vintage">VINTAGE</a></li>
+          <li><a href="http://shop-spero.com/about">ABOUT</a></li>
+          <li><a href="http://shop-spero.com/contact">CONTACT US</a></li>
+        </ul>
+    </div><!-- end options-->
+       
+   
 
 <!--THIS IS WHERE THE MAIN CONTENT WILL BE LOADED-->
 
-  <div id="main_content">{{page_content}}
-        </div><!-- end #main-->
+    <div id="main_content">{{page_content}}
+          </div><!-- end #main-->
 
 <!--MAIN CONTENT HAS BEEN LOADED-->
 
 
-    <div id="footer">
-      <div id="footer_info">
-        <ul>
-          <li id="footer_list">
-            <ul id="footer_menu">
-              <li><a href="http://shop-spero.com/about">ABOUT US</a></li>
-              <li><a> | </a></li>
-              <li><a href="http://shop-spero.com/shipping">SHIPPING &#38 HANDLING</a></li>
-              <li><a> | </a></li>
-              <li><a href="http://shop-spero.com/shipping">RETURN POLICY</a></li>
-              <li><a> | </a></li>
-              <li><a href="{{ pages.contact.url }}">CONTACT US</a></li>
-              <li><a> | </a></li>
-              <li><a href="http://shop-spero.com/subscription">SUBSCRIBE</a></li>
-            </ul>
-          </li>
-          <li id="footer_rights"><a>2013 SPERO INC ALL RIGHTS RESERVED</a></li>
-          
-          <li>
-            {% if store.places != blank  %}
-            <span class="footer-large">SOCIAL</span><br/>
-            <ul>
-              {% if store.twitter_url %}<li><a href="{{store.twitter_url}}" class="footer-social-link twitter"></a></li>{% endif %}
-              {% if store.facebook_url %}<li><a href="{{store.facebook_url}}" class="footer-social-link facebook"></a></li>{% endif %}
-              {% if store.tumblr_url %}<li><a href="{{store.tumblr_url}}" class="footer-social-link tumblr"></a></li>{% endif %}
-            </ul>
-            {% endif %}
-          </li>
-        </ul>
-      </div><!-- end #footer_info -->
-     <br/><br/>
-    </div><!-- end footer -->
-  </div><!-- end #container -->
-</body>
-
-</html>​
+      <div id="footer">
+        <div id="footer_info">
+          <ul>
+            <li id="footer_list">
+              <ul id="footer_menu">
+                <li><a href="http://shop-spero.com/about">ABOUT US</a></li>
+                <li><a> | </a></li>
+                <li><a href="http://shop-spero.com/shipping">SHIPPING &#38 HANDLING</a></li>
+                <li><a> | </a></li>
+                <li><a href="http://shop-spero.com/shipping">RETURN POLICY</a></li>
+                <li><a> | </a></li>
+                <li><a href="{{ pages.contact.url }}">CONTACT US</a></li>
+                <li><a> | </a></li>
+                <li><a href="http://shop-spero.com/subscription">SUBSCRIBE</a></li>
+              </ul>
+            </li>
+            <li id="footer_rights"><a>2013 SPERO INC ALL RIGHTS RESERVED</a></li>
+            
+            <li>
+              {% if store.places != blank  %}
+              <span class="footer-large">SOCIAL</span><br/>
+              <ul>
+                {% if store.twitter_url %}<li><a href="{{store.twitter_url}}" class="footer-social-link twitter"></a></li>{% endif %}
+                {% if store.facebook_url %}<li><a href="{{store.facebook_url}}" class="footer-social-link facebook"></a></li>{% endif %}
+                {% if store.tumblr_url %}<li><a href="{{store.tumblr_url}}" class="footer-social-link tumblr"></a></li>{% endif %}
+              </ul>
+              {% endif %}
+            </li>
+          </ul>
+        </div><!-- end #footer_info -->
+       <br/><br/>
+      </div><!-- end footer -->
+    </div><!-- end #container -->
+  </body>
+ 
+  </html>​
