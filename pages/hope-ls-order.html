@@ -1,0 +1,33 @@
+<!-- CSS -->
+<style>
+body {
+    background-color:white;
+}
+</style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900,400,300,100,200|Source+Sans+Pro:300" rel="stylesheet" type="text/css">
+<!-- HTML -->
+<form name="order-form">
+  <input name="email" type="email" placeholder="Email" required><br/>
+  <input name="name" type="text" placeholder="Name"><br/>
+  <select name="size">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select><br/>
+  <button type="submit">Submit Order!</button>
+</form>
+
+<!-- JavaScript -->
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyctJT4ASPnjy1tSblzhhTIDPRqnRh0iNvBhtEH-5Z0fhbH933E/exec'
+  const form = document.forms['order-form']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
